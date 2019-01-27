@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: DodgerBlue; */
+  width: 500px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* .flex-container > div {
+  background-color: #f1f1f1;
+  width: 500px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+} */
+.top{
+    height: 100px;
+}
+.title {
+    margin: 10px;
+}
+
+.center{
+    height: 200px;
+    background-color: #f1f1f1;
+}
+.sub-title{
+    margin: 10px;
+}
+.input-text{
+    margin: 10px;
+    width: 400px;
+    height: 30px;
+    padding : 10px 20px;
+    border: 0px;
+}
+
+.bottom{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    width: 250px;
+ /* background-color: #4CAF50; */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<h1>The flex-direction Property</h1>
+
+<p>The "flex-direction: column;" stacks the flex items vertically (from top to bottom):</p>
+
+<div class="flex-container">
+  <div class="top">
+      <div class="title">
+          Title
+      </div>
+  </div>
+  <div class="center">
+        <div class="sub-title">
+                SubTitle
+        </div>
+        <input class="input-text" type="text" placeholder="input here"/>   
+  </div>
+  <div class="bottom">
+      <button class="button-cancel">Cancel</button>
+      <button class="button-ok">OK</button>
+  </div>  
+</div>
+
+</body>
+</html>

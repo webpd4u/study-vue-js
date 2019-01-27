@@ -17,6 +17,18 @@
         -->
         <!-- <h3 slot="header">custom header</h3> -->
     </modal>
+    <br><br>
+
+    <button class="btn btn-primary" @click="openModal1" >Modal1</button>
+    <modal1 v-if="showModal1" @confirm="confirmModal1"
+        @cancel="cancelModal1" />
+    
+    <modal2 v-if="showModal2" @confirm="confirmModal2"
+        @cancel="cancelModal2" />
+
+    <modal3 v-if="showModal3" @confirm="confirmModal3"
+        @cancel="cancelModal3" />
+    
   </div>
 </template>
 
@@ -26,6 +38,9 @@
     import { mapGetters } from 'vuex';
 
     import modal from './Modal.vue';
+    import modal1 from './Modal1.vue';
+    import modal2 from './Modal2.vue';
+    import modal3 from './Modal3.vue';
 
     export default {
         methods: {
@@ -63,6 +78,35 @@
             //     // this.$store.state.counter--;
             //     this.$store.commit('decrement'); //method name as string
             // }
+            ,
+            openModal1 () {
+                this.showModal1 = true;
+            },
+
+            confirmModal1(){
+                this.showModal1 = false;
+                this.showModal2 = true;
+            },
+            cancelModal1(){
+                this.showModal1 = false;
+            },
+
+            confirmModal2(){
+                this.showModal2 = false;
+                this.showModal3 = true;
+            },
+            cancelModal2(){
+                this.showModal2 = false;
+            },
+
+            confirmModal3(){
+                this.showModal3 = false;
+            },
+            cancelModal3(){
+                this.showModal3 = false;
+            },
+
+
         },
         computed : {
             ...mapGetters([
@@ -72,11 +116,17 @@
         },
         components: {
             modal,
+            modal1,
+            modal2,
+            modal3,
         },
         data () {
             
             return {
-                showModal: false
+                showModal: false,
+                showModal1: false,
+                showModal2: false,
+                showModal3: false,
             }
         }
     }
